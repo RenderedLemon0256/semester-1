@@ -3,6 +3,9 @@
 #By submitting this code you are declaring that all work in this file, other than any provided template code, was written and developed by you independently.
 #Name: 
 
+name = input("What is your name? ")
+print(f"Welcome to LeedsBank's savings calculator {name}!")
+
 # Ask the user to input an amount they want to save every month - this should be an integer.
 monthlySavingsInput = input("Enter your monthly savings amount: ")
 monthlySavings = 0
