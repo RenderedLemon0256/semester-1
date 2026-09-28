@@ -20,4 +20,4 @@ try:
     print("£" + "{:.2f}".format(totalSavings))
     # print this out in the format £X.XX (to two decimal places).
 except Exception as ex:
-    print("Invalid amount " + ex)
+    print("Invalid amount")
