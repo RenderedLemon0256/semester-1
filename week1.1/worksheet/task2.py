@@ -5,13 +5,12 @@
 try:
     # Ask the user to input an amount they want to save every month - this should be an integer.
     monthlySavingsInput = input("Enter your monthly savings amount: ")
-    monthlySavings = int(monthlySavingsInput)
 
     # Validate that they have entered an integer.
 
 
     # Calculate the total amount of money they will have saved by the end of the year (amount per month multiplied by 12).
-    subtotalSavings = int(monthlySavings) * 12
+    subtotalSavings = int(monthlySavingsInput) * 12
     print(subtotalSavings)
     # print this out for the user with a suitable message.
 
@@ -20,5 +19,5 @@ try:
     totalSavings = subtotalSavings * 1.008
     print("£" + "{:.2f}".format(totalSavings))
     # print this out in the format £X.XX (to two decimal places).
-except:
-    print("Invalid amount")
+except Exception as ex:
+    print("Invalid amount " + ex)
