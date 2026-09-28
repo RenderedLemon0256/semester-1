@@ -6,6 +6,17 @@
 """
 
 minutes_remaining_input = input("Minutes remaining until the deadline: ")
+totalMinutes = int(minutes_remaining_input)
+if(totalMinutes <= 0):
+    print("Deadline has passed")
+    quit()
+
+totalHours = totalMinutes // 60
+remainingMinutes = totalMinutes - (totalHours * 60)
+totalDays = totalHours // 24
+remainingHours = totalHours - (totalDays * 24)
+
+print(f"{totalDays} days, {remainingHours} hours, {remainingMinutes} minutes remaining")
 
 # TODO: convert the input to an integer
 # TODO: calculate whole days, leftover hours, and remaining minutes
