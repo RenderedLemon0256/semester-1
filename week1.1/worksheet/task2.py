@@ -5,10 +5,7 @@
 try:
     # Ask the user to input an amount they want to save every month - this should be an integer.
     monthlySavingsInput = input("Enter your monthly savings amount: ")
-    monthlySavings = 0
     monthlySavings = int(monthlySavingsInput)
-    print("Invalid amount")
-    quit() #we are ending immediately as part of the task
 
     # Validate that they have entered an integer.
 
@@ -24,4 +21,4 @@ try:
     print(f"With interest, you will have £{"{:.2f}".format(totalSavings)} total savings")
     # print this out in the format £X.XX (to two decimal places).
 except:
-    print("Invalid Amount")
+    print("Invalid amount")
