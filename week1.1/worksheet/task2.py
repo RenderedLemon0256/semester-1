@@ -19,5 +19,5 @@ try:
     totalSavings = subtotalSavings * 1.008
     print("£" + "{:.2f}".format(totalSavings))
     # print this out in the format £X.XX (to two decimal places).
-except Exception as ex:
+except Exception, e:
     print("Invalid amount")
