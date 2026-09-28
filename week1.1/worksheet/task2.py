@@ -9,8 +9,11 @@ print(f"Welcome to LeedsBank's savings calculator {name}!")
 
 
 # Ask the user to input an amount they want to save every month - this should be an integer.
-monthlySavings = input("Enter your monthly savings amount: ")
-if(not isinstance(monthlySavings,int) ):
+monthlySavingsInput = input("Enter your monthly savings amount: ")
+monthlySavings = 0
+try:
+    monthlySavings = int(monthlySavingsInput)
+except:
     print("Invalid amount")
     quit() #we are ending immediately as part of the task
 
