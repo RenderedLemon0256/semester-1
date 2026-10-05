@@ -1,7 +1,11 @@
 # Worksheet 1.2: Task 2 Solution
 from util import read_numbers
+import sys
 
 numbers = read_numbers()
+if(len(numbers) == 0):
+    print(f"Error: no numbers provided")
+    sys.exit()
 print(f"Minimum = {min(numbers)}")
 print(f"Maximum = {max(numbers)}")
 print(f"Mean = {sum(numbers) / len(numbers)}")
