@@ -14,7 +14,7 @@ except:
 numbers.sort()
 if(len(numbers) % 2 == 1): #odd number 
     print(f"Median = {numbers[int((len(numbers) + 1) / 2)-1]} ")
-else:6.5 
+else:
     firstMiddle = numbers[int(len(numbers)/2)-1]
     secondMiddle = numbers[int(len(numbers)/2)]
     sum = firstMiddle + secondMiddle
