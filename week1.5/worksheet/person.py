@@ -2,12 +2,21 @@
 
 from datetime import date
 
+def getInitals(name):
+    """returns the initals of the person"""
+    words = name.split(" ")
+    initials = ""
+    for word in words:
+        initials += word[0].upper()
+    return initials
+
 class Person:
     """
     A Person, with a name and a date of birth.
     """
     name = "Bob"
     birth = date.today()
+    initals = "BDB"
     def __init__(self, name, birth):
             if(type(name) != str):
                 raise TypeError
@@ -20,14 +29,9 @@ class Person:
 
             self.name = name
             self.birth = birth
+            self.initals = getInitals(name)
 
-    def initals(self):
-        """returns the initals of the person"""
-        words = self.name.split(" ")
-        initials = ""
-        for word in words:
-            initials += word[0].upper()
-        return initials
+   
     def is_birthday(self):
          """returns whether it is the person's birthday today"""
          if self.birth.month == date.today().month and self.birth.day == date.today().day:
