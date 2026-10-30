@@ -7,11 +7,11 @@ class Person:
     A Person, with a name and a date of birth.
     """
     name = "Bob"
-    birth = date.now()
+    birth = date.today()
     def __init__(self, name, birth):
-            if(type(name) != type(str)):
+            if(type(name) != str):
                 raise TypeError
-            if(type(birth) != type(date)):
+            if(type(birth) != date):
                 raise TypeError
     
             if (name == ""):

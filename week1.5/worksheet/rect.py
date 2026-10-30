@@ -12,9 +12,9 @@ class Rectangle:
         """
         # Add code here to check type and value of provided width & height,
         # raising appropriate exceptions if necessary (see README.md)
-        if(type(width) != type(int)):
+        if(type(width) != int):
             raise TypeError
-        if(type(height) != type(int)):
+        if(type(height) != int):
             raise TypeError
 
         if (width <= 0):
