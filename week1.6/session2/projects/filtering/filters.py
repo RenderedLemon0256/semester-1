@@ -1,5 +1,6 @@
 from image import Image
 def blur(unbluredImage):
+    """Carries out a box blur on the given image and returns the result"""
     blurredImage = unbluredImage.copy()
     for row in range(1, unbluredImage.height - 1):
         for col in range(1, unbluredImage.width - 1):
