@@ -2,10 +2,10 @@ from image import Image
 def blur(unbluredImage):
     """Carries out a box blur on the given image and returns the result"""
     blurredImage = unbluredImage.copy()
-    for row in range(1, unbluredImage.height - 1):
+    for row in range(1, unbluredImage.height - 1): #going through the pixels
         for col in range(1, unbluredImage.width - 1):
             total = 0
-            for yoffest in range(-1,2):
+            for yoffest in range(-1,2): #going through the pixels around it
                 for xoffset in range(-1,2):
                     total += unbluredImage.get(row+yoffest,col+xoffset)
             average = int(total / 9)

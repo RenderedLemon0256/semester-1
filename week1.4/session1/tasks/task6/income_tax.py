@@ -33,6 +33,33 @@ def income_tax_calculator(annual_income):
         one decimal point. You can use the round() function,
         e.g round(tax, 1) 0.0 if annual_income is not a positive integer.
     """
+    remainingIncome = annual_income - 12570
+    tax = 0
+
+    if remainingIncome <= 0:
+        return tax
+
+    #basic rate
+    if remainingIncome > 37700:
+        tax += 37700 * 0.2 #we can use the full amount since their income goes to the next bracket
+        remainingIncome -= 37700
+    else:
+        tax += remainingIncome * 0.2 #rest of income is contained in tax bracket
+        return tax #all income accounted for so can return now
+
+    #higher rate
+    if remainingIncome > 74869:
+        tax += 74869 * 0.4
+        remainingIncome -= 74869
+    else:
+        tax += remainingIncome * 0.4
+        return tax
+
+    #additional rate
+    tax += remainingIncome * 0.45
+    return tax
+
+    
 
 
 # Check if the following lines produce the correct output
