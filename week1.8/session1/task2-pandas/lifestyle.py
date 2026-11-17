@@ -1,6 +1,7 @@
-import pandas
+import pandas as pd
 
-data = pandas.read_csv("lifestyle_data.csv")
+
+data = pd.read_csv("lifestyle_data.csv")
 
 # What data type is `data` as output from the `read_csv()` method?
 
@@ -10,16 +11,33 @@ data = pandas.read_csv("lifestyle_data.csv")
 # - Leave your code under the comments.
 
 # Find the total number of students
+data["Study_Hours_Per_Day"] = pd.to_numeric(data["Study_Hours_Per_Day"])
+data["Extracurricular_Hours_Per_Day"] = pd.to_numeric(data["Extracurricular_Hours_Per_Day"])
+data["Sleep_Hours_Per_Day"] = pd.to_numeric(data["Sleep_Hours_Per_Day"])
+data["Social_Hours_Per_Day"] = pd.to_numeric(data["Social_Hours_Per_Day"])
+data["Physical_Activity_Hours_Per_Day"] = pd.to_numeric(data["Physical_Activity_Hours_Per_Day"])
+data["GPA"] = pd.to_numeric(data["GPA"])
+print(len(data))
 
 # Find the mean average GPA of the students
+print(data["GPA"].mean())
 
 # Find the standard deviation of how much sleep students get per day
+print(data["Sleep_Hours_Per_Day"].std())
 
 # Find the maximum amount of study hours per day
+print(data["Study_Hours_Per_Day"].max())
 
 # Sort the students by social hours per day ascending (lowest -> highest)
+print(data["Social_Hours_Per_Day"].sort_values())
 
 # Add a column 'Total_hours' which adds together all the Hours_Per_Day columns into one
+data["Total_hours"] = data["Study_Hours_Per_Day"] + data["Extracurricular_Hours_Per_Day"] + data["Sleep_Hours_Per_Day"] + data["Social_Hours_Per_Day"] + data["Physical_Activity_Hours_Per_Day"]
 
 # Filter all students with a 'high' stress level, and all the students with a 'low' stress level.
+df = data[data["Stress_Level"] != "Moderate"]
+
 # Can you work out whether having a higher stress level leads to a higher GPA?
+print(data[data["Stress_Level"] == "High"]["GPA"].mean())
+print(data[data["Stress_Level"] == "Moderate"]["GPA"].mean())
+print(data[data["Stress_Level"] == "Low"]["GPA"].mean())
