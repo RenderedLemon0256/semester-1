@@ -1,4 +1,4 @@
-# See README.md for instructions on what to do this program
+# See README.md for instructions on what to do to this program
 
 import random
 
